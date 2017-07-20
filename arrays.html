@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Arrays</title>
+</head>
+<body>
+    <p id='myParagraph'>JavaScript</p>
+
+    <script>
+
+        
+        var shoppingList = new Array('bread', 'milk', 'eggs');
+
+        showResults(shoppingList[0]);
+        showResults(shoppingList[1]);
+        showResults(shoppingList[2]);
+
+        function showResults(x){
+            document.getElementById('myParagraph').innerHTML += '<br/>' + x;
+        }
+
+        shoppingList[1] = 'yogurt'; 
+        showResults(shoppingList);
+          //////////////////////////////
+         //delete and add with SPLICE//
+        //////////////////////////////
+        shoppingList.splice(1, 1) 
+        //where to start, how many from that first number do we want to delete
+        showResults(shoppingList);
+
+        shoppingList.splice(1,0, 'banana', 'apple'); 
+        //where to start, 0 if you're adding, then items added 
+        showResults(shoppingList);
+
+          //////////////////////////////
+         /////////SORT an Array////////
+        //////////////////////////////
+        showResults(shoppingList.reverse());
+        var myString = 'ABCD'
+        var myArray = myString.split();  //if you put a number after the split then it will only use that number of items i.e.. split(',' , 2)
+        showResults(myArray); 
+
+    </script>
+</body>
+</html>
